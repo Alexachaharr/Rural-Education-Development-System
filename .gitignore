@@ -1,0 +1,29 @@
+# dependencies
+node_modules/
+
+# environment files (real secrets live here, only commit the .example files)
+.env
+.env.local
+.env.*.local
+
+# build output
+frontend/dist/
+
+# SQLite database (recreated and seeded automatically on start)
+backend/database/*.db
+backend/database/*.db-wal
+backend/database/*.db-shm
+
+# uploaded files (keep the folders)
+backend/uploads/pdfs/*
+backend/uploads/videos/*
+!backend/uploads/pdfs/.gitkeep
+!backend/uploads/videos/.gitkeep
+
+# logs and OS junk
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json

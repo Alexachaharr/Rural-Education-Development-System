@@ -1,0 +1,21 @@
+# Render Blueprint: deploys the backend API.
+# In Render: New → Blueprint → pick this repo. Then set CORS_ORIGIN to your
+# Cloudflare Pages URL in the service's Environment tab.
+services:
+  - type: web
+    name: rural-edu-api
+    runtime: node
+    plan: free
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: 22.12.0
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CORS_ORIGIN
+        value: http://localhost:5173
